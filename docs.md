@@ -53,3 +53,24 @@ git add .
 ```
 
 
+## Git commit 
+- Write message for changes 
+
+```
+git commit -m "First commit"
+```
+
+
+## Git log
+- Check the commits that you have done
+```
+git log
+```
+
+
+## Git push
+- Upload code to github
+
+```
+git push
+```

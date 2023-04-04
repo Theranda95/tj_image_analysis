@@ -12,3 +12,5 @@ num_files = lengthOf(list);
 for (i = 0; i < num_files; i++) {
 	write(list[i]);
 }
+
+function flatstack () 

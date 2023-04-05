@@ -1,4 +1,4 @@
-// =========================================================================================================================
+// =========================================================================================================================//
 // * Identify the directory to access files * 
 dir = getDirectory("Choose input Directory"); // Select the directory
 print(dir);
@@ -30,7 +30,9 @@ function flatstack (file, dir) {
 	selectWindow(c1_name);
 	close();
 	
-	max_name = output_dir + "out1.tif";
-    saveAs("Tiff", max_name);
+	
+	index_nd2 = indexOf(name, ".nd2");
+	max_name = substring(file_name, 0, index_nd2);
+	full_max_name = output_dir + "MAX_" + max_name + ".tif";
+    saveAs("Tiff", full_max_name);
 }
-

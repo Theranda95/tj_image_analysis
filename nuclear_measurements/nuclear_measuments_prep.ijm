@@ -22,4 +22,15 @@ function flatstack (file, dir) {
 	close();
 	close();
 	close();
+	
+	c1_name = "C1-" + name;
+	selectWindow(c1_name);
+	run("Z Project...", "projection=[Max Intensity]");
+	
+	selectWindow(c1_name);
+	close();
+	
+	max_name = output_dir + "out1.tif";
+    saveAs("Tiff", max_name);
 }
+

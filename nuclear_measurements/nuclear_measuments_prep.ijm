@@ -46,4 +46,14 @@ function flatstack (file, dir) {
 	mask_name = "MASK_" + image + ".tif";
 	full_mask_name = output_dir + mask_name;
 	saveAs("Tiff",  full_mask_name);
+	
+	run("Analyze Particles...", "size=45-Infinity display exclude summarize add");
+	
+	summary = image + "_summary.csv";
+	results = image + "_results.csv";
+	selectWindow("Summary");
+	saveAs("Results", output_dir + summary);
+	selectWindow("Results");
+	saveAs("Results", output_dir + results);
+	run("Close All");
 }

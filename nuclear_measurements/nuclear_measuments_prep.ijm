@@ -32,7 +32,18 @@ function flatstack (file, dir) {
 	
 	
 	index_nd2 = indexOf(name, ".nd2");
-	max_name = substring(file_name, 0, index_nd2);
-	full_max_name = output_dir + "MAX_" + max_name + ".tif";
+	image = substring(file_name, 0, index_nd2);
+	max_name = "MAX_" + image + ".tif";
+	full_max_name = output_dir + max_name  ;
     saveAs("Tiff", full_max_name);
+    selectWindow(max_name);
+    setAutoThreshold("Default dark no-reset");
+    setOption("BlackBackground", true);
+    run("Convert to Mask");
+    run("Fill Holes");
+	run("Watershed");
+	
+	mask_name = "MASK_" + image + ".tif";
+	full_mask_name = output_dir + mask_name;
+	saveAs("Tiff",  full_mask_name);
 }

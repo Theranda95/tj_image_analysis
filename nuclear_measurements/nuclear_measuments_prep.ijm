@@ -19,4 +19,7 @@ function flatstack (file, dir) {
 	open(name);
 	selectWindow(name);
 	run("Split Channels");
+	close();
+	close();
+	close();
 }

@@ -1,9 +1,9 @@
 // =========================================================================================================================//
 // * Identify the directory to access files * 
-setBatchMode(true);
+//setBatchMode(true);
 dir = getDirectory("Choose input Directory"); // Select the directory
 //print(dir);
-setBatchMode(true);
+//setBatchMode(true);
 list = getFileList(dir); 
 
 output_dir = dir + "outputs/";
@@ -17,7 +17,7 @@ for (i = 0; i < num_files; i++) {
 }
 
 function flatstack (file, dir) {
-	setBatchMode(true);
+	//setBatchMode(true);
 	name = File.getName(file); // get filename 
 	open(name);
 	selectWindow(name);

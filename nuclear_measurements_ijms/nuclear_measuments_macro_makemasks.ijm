@@ -3,15 +3,16 @@
 dir = getDirectory("Choose input Directory"); // Select the directory
 //print(dir);
 
-list = getFileList(dir); 
+list = getFileList(dir); //Get the files from a folder 
 
-output_dir = dir + "outputs/";
-File.makeDirectory(output_dir);
-print(output_dir)
+output_dir = dir + "outputs/"; //Path to making the directory 
+File.makeDirectory(output_dir); // Making the output folder 
+//print(output_dir)
 
-num_files = lengthOf(list);
+num_files = lengthOf(list); 
 //call("ij.Prefs.set", "BioFormats.showDialog", "false");
-//setBatchMode(true);
+setBatchMode(true);
+
 for (i = 0; i < num_files; i++) {
 	file_name = list[i];
 	flatstack(file_name, dir);
@@ -50,5 +51,4 @@ function flatstack (file, dir) {
 	saveAs("Tiff",  full_mask_name);
 	run("Close All");
 }
-
-//setBatchMode(false);	
+setBatchMode(false);	

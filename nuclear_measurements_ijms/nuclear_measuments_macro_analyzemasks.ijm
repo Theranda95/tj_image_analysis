@@ -10,14 +10,14 @@ File.makeDirectory(output_dir);
 //print(output_dir)
 
 num_files = lengthOf(list);
-setBatchMode(true);
+//setBatchMode(true);
 for (i = 0; i < num_files; i++) {
 	file_name = list[i];
 	flatstack(file_name, dir);
 }
 
 function flatstack (file, dir) {
-	//setBatchMode(true);
+	setBatchMode(true);
 	name = File.getName(file); // get filename 
 	open(name);
 	selectWindow(name);
@@ -56,6 +56,8 @@ function flatstack (file, dir) {
 	results = image + "_results.csv";
 	selectWindow("Summary");
 	saveAs("Results", output_dir + summary);
+	selectWindow(summary);
+	run("Close");
 	selectWindow("Results");
 	saveAs("Results", output_dir + results);
 	selectWindow("Results");

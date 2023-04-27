@@ -5,7 +5,7 @@ dir = getDirectory("Choose input Directory"); // Select the directory
 //print(dir);
 list = getFileList(dir); 
 
-output_dir = dir + "outputs/";
+output_dir = dir + "masks_results_v1/";
 File.makeDirectory(output_dir);
 //print(output_dir)
 

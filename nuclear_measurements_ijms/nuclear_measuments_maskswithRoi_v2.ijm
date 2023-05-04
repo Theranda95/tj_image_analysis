@@ -5,7 +5,7 @@ dir = getDirectory("Choose Input Directory"); // Select input directory
 //print(dir);
 
 input_dir = dir;
-output_dir =  File.getParent(dir) + "outputs/"; //Path to making the directory 
+output_dir =  File.getParent(dir) + "/outputs/"; //Path to making the directory 
 //File.makeDirectory(output_dir); // Making the output folder 
 //print(output_dir)
 
@@ -20,12 +20,12 @@ for (i = 0; i < num_files; i++) {
 	file_name = list[i];
 	nd2_index = indexOf(file_name, ".nd2");
 	if (nd2_index != -1){
-		mask (file_name, input_dir);
+		mask (file_name, input_dir, output_dir);
 	}
 	   
 }
 
-function mask (file, input_dir) {
+function mask (file, input_dir,  output_dir) {
 	name = File.getName(file); // get filename 
 	index_nd2 = indexOf(name, ".nd2");
     image_name = substring(name, 0, index_nd2);

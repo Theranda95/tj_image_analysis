@@ -14,7 +14,7 @@ num_files = lengthOf(list);
 
 //roi_list = getFileList(dir_roi, ".roi");
 //roi_num_files = lengthOf(roi_list); 
-//setBatchMode(true);
+//setBatchMode(true); Turning this on does not remove the roi selections from the images
 
 for (i = 0; i < num_files; i++) {
 	file_name = list[i];
@@ -34,13 +34,13 @@ function mask (file, input_dir,  output_dir) {
 	run("Split Channels");
 	close();
 	close();
-	close();
+	//close();
 	
 	
 	c1_name = "C1-" + name;
 	selectWindow(c1_name);
 	run("Z Project...", "projection=[Max Intensity]");
-	run("Gaussian Blur...", "sigma=1");
+	//run("Gaussian Blur...", "sigma=1");
 	selectWindow(c1_name);
 	close();
 	

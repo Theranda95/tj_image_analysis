@@ -5,7 +5,7 @@ dir = getDirectory("Choose Input Directory"); // Select input directory
 //print(dir);
 
 input_dir = dir;
-output_dir =  File.getParent(dir) + "/outputs/"; //Path to making the directory 
+output_dir =  File.getParent(dir) + "outputs/"; //Path to making the directory 
 //File.makeDirectory(output_dir); // Making the output folder 
 //print(output_dir)
 
@@ -14,18 +14,18 @@ num_files = lengthOf(list);
 
 //roi_list = getFileList(dir_roi, ".roi");
 //roi_num_files = lengthOf(roi_list); 
-//setBatchMode(true); Turning this on does not remove the roi selections from the images
+//setBatchMode(true);
 
 for (i = 0; i < num_files; i++) {
 	file_name = list[i];
 	nd2_index = indexOf(file_name, ".nd2");
 	if (nd2_index != -1){
-		mask (file_name, input_dir, output_dir);
+		mask (file_name, input_dir);
 	}
 	   
 }
 
-function mask (file, input_dir,  output_dir) {
+function mask (file, input_dir) {
 	name = File.getName(file); // get filename 
 	index_nd2 = indexOf(name, ".nd2");
     image_name = substring(name, 0, index_nd2);
@@ -34,13 +34,13 @@ function mask (file, input_dir,  output_dir) {
 	run("Split Channels");
 	close();
 	close();
-	//close();
+	close();
 	
 	
 	c1_name = "C1-" + name;
 	selectWindow(c1_name);
 	run("Z Project...", "projection=[Max Intensity]");
-	//run("Gaussian Blur...", "sigma=1");
+	run("Gaussian Blur...", "sigma=1");
 	selectWindow(c1_name);
 	close();
 	

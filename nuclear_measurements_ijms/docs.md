@@ -89,3 +89,14 @@ rm filename
 git rm
 ```
 
+## Create .gitignore to omit files from being tracked by git
+```
+touch .gitgnore
+```
+
+- Write in .gitgnore files what you want to ignore
+```
+*.pdf
+*.docx
+*.txt
+```

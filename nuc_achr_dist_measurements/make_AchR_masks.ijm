@@ -25,6 +25,7 @@ function flatstack (file, dir) {
     setOption("BlackBackground", true);
     run("Convert to Mask");
     run("Fill Holes");
+    run("Remove Outliers...", "radius=4 threshold=50 which=Bright");
     
  
 	image = substring(file_name, 4);

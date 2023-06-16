@@ -76,3 +76,10 @@ git log
 ```
 git push
 ```
+
+## Git checkout 
+When making changes by mistake and want to reset the file use the command below:
+
+```
+git checkout
+```

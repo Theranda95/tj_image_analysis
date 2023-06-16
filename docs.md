@@ -30,7 +30,6 @@ touch file1
 ls
 ```
 
-
 ## Check absolute 
 - pwd (path to current directory)
 ```

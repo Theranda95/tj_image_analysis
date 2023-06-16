@@ -1,6 +1,7 @@
 # Setup Github repository 
 
 ## Create repo 
+- You create the repo by clicking on the "new" button 
 - Once you create repository, get the URL (https://github.com/Theranda95/tj_image_analysis.git)
 
 
@@ -11,7 +12,6 @@
 git clone https://github.com/Theranda95/tj_image_analysis.git
 ```
 
-
 # Terminal Commands
 
 ## Create folder
@@ -21,7 +21,10 @@ git clone https://github.com/Theranda95/tj_image_analysis.git
 mkdir testing
 ```
 
-
+## Create File 
+```
+touch file1
+```
 ## Check files under one folder
 ```
 ls

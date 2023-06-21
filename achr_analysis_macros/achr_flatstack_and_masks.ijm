@@ -5,7 +5,7 @@ dir = getDirectory("Choose input Directory"); // Select the directory
 
 list = getFileList(dir); //Get the files from a folder 
 
-output_dir = dir + "23.06.21_ko2_d7_achr/"; //Path to making the directory 
+output_dir = dir + "23.06.21_achr_stacks_masks/"; //Path to making the directory 
 File.makeDirectory(output_dir); // Making the output folder 
 //print(output_dir)
 
@@ -49,18 +49,19 @@ function flatstack (file, dir) {
 	mask_name = "MASK_" + image + ".tif";
 	full_mask_name = output_dir + mask_name;
 	saveAs("Tiff",  full_mask_name);
-	run("Analyze Particles...", "size=5-Infinity display exclude add");
+	run("Analyze Particles...", "size=5-Infinity display exclude summarize add");
 		
 	summary = image + "_summary.csv";
 	results = image + "_results.csv";
 	selectWindow("Summary");
 	saveAs("Results", output_dir + summary);
-	SselectWindow(summary);
+	selectWindow(summary);
 	run("Close");
 	selectWindow("Results");
 	saveAs("Results", output_dir + results);
 	selectWindow("Results");
-	//roiManager("delete");
+	close();
+	roiManager("delete");
 	run("Close All");
 }
 	

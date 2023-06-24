@@ -50,19 +50,19 @@ function flatstack (file, dir) {
 	full_mask_name = output_dir + mask_name;
 	saveAs("Tiff",  full_mask_name);
 	run("Analyze Particles...", "size=5-Infinity display exclude summarize add");
-		
 	summary = image + "_summary.csv";
 	results = image + "_results.csv";
-	selectWindow("Summary");
-	saveAs("Results", output_dir + summary);
-	selectWindow(summary);
-	run("Close");
 	selectWindow("Results");
 	saveAs("Results", output_dir + results);
 	selectWindow("Results");
-	close();
+	run("Close");
+	selectWindow("Summary");
+	saveAs("Results", output_dir + summary);
+	selectWindow(summary);
+	run("Close All");
 	roiManager("delete");
 	run("Close All");
+	
 }
 	
 	//run("Close All");

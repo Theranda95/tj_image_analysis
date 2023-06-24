@@ -44,7 +44,7 @@ function flatstack (file, dir) {
     setAutoThreshold("Yen dark no-reset");
     setOption("BlackBackground", true);
     run("Convert to Mask");
-    //run("Fill Holes");
+    run("Fill Holes");
 	
 	mask_name = "MASK_" + image + ".tif";
 	full_mask_name = output_dir + mask_name;

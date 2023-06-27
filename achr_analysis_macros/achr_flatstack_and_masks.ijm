@@ -5,7 +5,7 @@ dir = getDirectory("Choose input Directory"); // Select the directory
 
 list = getFileList(dir); //Get the files from a folder 
 
-output_dir = dir + "23.06.24_achr_masks_results/"; //Path to making the directory 
+output_dir = dir + "23.06.25_achr_masks_results/"; //Path to making the directory 
 File.makeDirectory(output_dir); // Making the output folder 
 //print(output_dir)
 

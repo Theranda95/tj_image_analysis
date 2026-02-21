@@ -5,7 +5,7 @@ dir = getDirectory("Choose input Directory"); // Select the directory
 
 list = getFileList(dir); //Get the files from a folder 
 
-output_dir = dir + "23.06.24_nuclei_flatstack/"; //Path to making the directory 
+output_dir = dir + "23.08.01_nuclei_flatstack/"; //Path to making the directory 
 File.makeDirectory(output_dir); // Making the output folder 
 //print(output_dir)
 
@@ -25,7 +25,7 @@ function flatstack (file, dir) {
 	run("Split Channels");
 	close();
 	close();
-
+	close();
 	
 	c1_name = "C1-" + name;
 	selectWindow(c1_name);
